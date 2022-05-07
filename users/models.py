@@ -62,7 +62,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=60)
     year = models.IntegerField(null=True)
     phone = models.CharField(max_length=10)
-    addminsion_number = models.CharField(max_length=100,unique=True)
+    addminsion_number = models.CharField(max_length=100,null=True)
     branch = models.CharField(max_length=20)
     club = models.ForeignKey(Club,on_delete=models.CASCADE,blank=True,null=True)
     profile_pics = models.ImageField(upload_to="profilepics",default="default.jpg")

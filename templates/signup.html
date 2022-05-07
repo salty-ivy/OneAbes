@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+{% block static %}
+{% endblock static %}
+
+{% block content %}
+	{% for message in messages %}
+		<div class="alert alert-{{message.tags}}">
+	    	{{message}}
+	    </div>
+	{% endfor %}
+	<form method="POST" autocomplete="off">
+		{% csrf_token %}
+		<div class="field">
+		  <label class="label" id="test">Email</label>
+		  <div class="control">
+		  	{{form.email}}
+		  </div>
+		 {{form.email.errors}}
+		</div>
+
+		<div class="field">
+		  <label class="label">Name</label>
+		  <div class="control">
+		  	{{form.name}}
+		  </div>
+		  {{form.name.errors}}
+		</div>
+
+		<div class="field">
+		  <label class="label">Phone</label>
+		  <div class="control">
+		  	{{form.phone}}
+		  </div>
+		  {{form.phone.errors}}
+		</div>
+
+		<div class="field">
+		  <label class="label">Addmission Number</label>
+		  <div class="control">
+		  	{{form.addmision_number}}
+		  </div>
+		  {{form.addmision_number.errors}}
+		</div>
+
+		<div class="field">
+		  <label class="label">Year</label>
+		  <div class="control">
+		    <div class="select">
+		      {{form.year}}
+		    </div>
+		  </div>
+		</div>
+
+		<div class="field">
+		  <label class="label">Branch</label>
+		  <div class="control">
+		    <div class="select">
+		      {{form.branch}}
+		    </div>
+		  </div>
+		</div>
+
+		<div class="field">
+		  <label class="label">Password</label>
+		  <div class="control">
+		  	{{form.password}}
+		  </div>
+		  {{form.addmision_number.errors}}
+		</div>
+
+
+		<div class="field">
+		  <label class="label">Confirm Password</label>
+		  <div class="control">
+		  	{{form.confirm_password}}
+		  </div>
+		  {{form.addmision_number.errors}}
+		</div>
+
+		<div class="field is-grouped">
+		  <div class="control">
+		    <input type="submit" class="button is-link" value="Submit">
+		  </div>
+		  <div class="control">
+		    <button class="button is-link is-light">Cancel</button>
+		  </div>
+		</div>
+	</form>
+{% endblock content %}
