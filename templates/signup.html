@@ -5,9 +5,7 @@
 
 {% block content %}
 	{% for message in messages %}
-		<div class="alert alert-{{message.tags}}">
-	    	{{message}}
-	    </div>
+		<p class="help is-{{ message.tag }}">{{message}}</p>
 	{% endfor %}
 	<form method="POST" autocomplete="off">
 		{% csrf_token %}

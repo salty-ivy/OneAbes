@@ -20,7 +20,7 @@ def signupView(request):
                 profile.name = form.cleaned_data.get('name')
                 profile.year = int(form.cleaned_data.get('year'))
                 profile.phone = form.cleaned_data.get('phone')
-                profile.addminsion_number = form.cleaned_data.get('addminsion_number')
+                profile.addminsion_number = form.cleaned_data.get('addmision_number')
                 profile.branch = form.cleaned_data.get('name')
                 profile.save()
                 messages.success(request,"Account created successfully")
