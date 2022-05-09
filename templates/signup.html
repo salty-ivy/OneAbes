@@ -1,88 +1,138 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
 {% load static %}
-{% block static %}
-{% endblock static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "test.css" %}">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% block content %}
-	{% for message in messages %}
-		<p class="help is-{{ message.tag }}">{{message}}</p>
-	{% endfor %}
-	<form method="POST" autocomplete="off">
-		{% csrf_token %}
-		<div class="field">
-		  <label class="label" id="test">Email</label>
-		  <div class="control">
-		  	{{form.email}}
-		  </div>
-		 {{form.email.errors}}
-		</div>
+    <link rel="stylesheet"  href="/static/style.css" media="screen" />
+    <script type="text/javascript" src="/static/main.js"></script>
 
-		<div class="field">
-		  <label class="label">Name</label>
-		  <div class="control">
-		  	{{form.name}}
-		  </div>
-		  {{form.name.errors}}
-		</div>
+    	<style type="text/css">
+		#check{
+			/*background: red;*/
+			margin-bottom: 10px;
+			text-align: center;
+		}
+		#check2{
+			/*background: blue;*/
+			margin-top: 60px;
+			margin-bottom: 30px;
+			padding: 20px;
+			font-size: 50px;
+			width: 40%;
+			/*border: 2px solid black;*/
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		}
+/*		#mydiv{
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+			width: 50%;
+			margin: 0 auto;
+		}*/
+	</style>
 
-		<div class="field">
-		  <label class="label">Phone</label>
-		  <div class="control">
-		  	{{form.phone}}
-		  </div>
-		  {{form.phone.errors}}
-		</div>
-
-		<div class="field">
-		  <label class="label">Addmission Number</label>
-		  <div class="control">
-		  	{{form.addmision_number}}
-		  </div>
-		  {{form.addmision_number.errors}}
-		</div>
-
-		<div class="field">
-		  <label class="label">Year</label>
-		  <div class="control">
-		    <div class="select">
-		      {{form.year}}
+</head>
+<body>
+   	<div id="mydiv">
+		<div class="none" id="check">
+			<div class="container" id="check2">
+		      <h1 class="title is-size-1" id="signup">
+		        Signup
+		      </h1>
 		    </div>
-		  </div>
-		</div>
+		 </div>
+		{% for message in messages %}
+			<p class="help is-{{ message.tag }}">{{message}}</p>
+		{% endfor %}
+		<div class="columns">
+			<div class="column is-half  is-offset-one-quarter" id="myform">
+				<form method="POST" autocomplete="off">
+					{% csrf_token %}
+					<div class="field">
+					  <label class="label is-size-5" id="test">Email</label>
+					  <div class="control">
+					  	{{form.email}}
+					  </div>
+					 {{form.email.errors}}
+					</div>
 
-		<div class="field">
-		  <label class="label">Branch</label>
-		  <div class="control">
-		    <div class="select">
-		      {{form.branch}}
-		    </div>
-		  </div>
-		</div>
+					<div class="field">
+					  <label class="label is-size-5">Name</label>
+					  <div class="control">
+					  	{{form.name}}
+					  </div>
+					  {{form.name.errors}}
+					</div>
 
-		<div class="field">
-		  <label class="label">Password</label>
-		  <div class="control">
-		  	{{form.password}}
-		  </div>
-		  {{form.addmision_number.errors}}
-		</div>
+					<div class="field">
+					  <label class="label is-size-5">Phone</label>
+					  <div class="control">
+					  	{{form.phone}}
+					  </div>
+					  {{form.phone.errors}}
+					</div>
+
+					<div class="field">
+					  <label class="label is-size-5">Addmission Number</label>
+					  <div class="control">
+					  	{{form.addmision_number}}
+					  </div>
+					  {{form.addmision_number.errors}}
+					</div>
+
+					<div class="field">
+					  <label class="label is-size-5">Year</label>
+					  <div class="control">
+					    <div class="select">
+					      {{form.year}}
+					    </div>
+					  </div>
+					</div>
+
+					<div class="field">
+					  <label class="label is-size-5">Branch</label>
+					  <div class="control">
+					    <div class="select">
+					      {{form.branch}}
+					    </div>
+					  </div>
+					</div>
+
+					<div class="field">
+					  <label class="label is-size-5">Password</label>
+					  <div class="control">
+					  	{{form.password}}
+					  </div>
+					  {{form.addmision_number.errors}}
+					</div>
 
 
-		<div class="field">
-		  <label class="label">Confirm Password</label>
-		  <div class="control">
-		  	{{form.confirm_password}}
-		  </div>
-		  {{form.addmision_number.errors}}
-		</div>
+					<div class="field">
+					  <label class="label is-size-5">Confirm Password</label>
+					  <div class="control">
+					  	{{form.confirm_password}}
+					  </div>
+					  {{form.addmision_number.errors}}
+					</div>
 
-		<div class="field is-grouped">
-		  <div class="control">
-		    <input type="submit" class="button is-link" value="Submit">
-		  </div>
-		  <div class="control">
-		    <button class="button is-link is-light">Cancel</button>
-		  </div>
+					<div class="field is-grouped">
+					  <div class="control">
+					    <input type="submit" class="button is-link" value="Submit">
+					  </div>
+					  <div class="control">
+					    <a class="button is-link is-light" href="#">Signin</a>
+					  </div>
+					</div>
+				</form>
+			</div>
 		</div>
-	</form>
-{% endblock content %}
+	</div>
+ 	<script src="{% static "main.js" %}"></script>
+</body>
+</html>

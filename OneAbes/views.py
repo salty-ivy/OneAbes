@@ -11,7 +11,6 @@ def signupView(request):
     form = SingupForm()
     if request.method == 'POST':
         form = SingupForm(request.POST)
-        print(request.POST)
         if form.is_valid():
             if form.cleaned_data.get('password')==form.cleaned_data.get('confirm_password'):
                 user = User.objects.create_user(email=form.cleaned_data.get('email'),password=form.cleaned_data.get('password'))
@@ -31,3 +30,7 @@ def signupView(request):
 
     context = {'form':form,}
     return render(request,'signup.html',context)
+
+
+def signinView(request):
+    return render (request,'signin.html')
