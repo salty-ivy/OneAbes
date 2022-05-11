@@ -5,29 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "test.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'test.css' %}">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet"  href="/static/style.css" media="screen" />
+    <link rel="stylesheet" href="{% static 'signin.css' %}">
     <script type="text/javascript" src="/static/main.js"></script>
 </head>
 <body>
-	<div class="field">
-  <label class="label">Name</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="e.g Alex Smith">
-  </div>
-</div>
+	
+		<div class="column is-one-quarter-fullhd shadow">
+			<form method="POST" autocomplete="off">
+				{% csrf_token %}
+				<div class="field">
+				  <label class="label">Email</label>
+				  <div class="control">
+				    {{form.email}}
+				  </div>
+				</div>
 
-<div class="field">
-  <label class="label">Email</label>
-  <div class="control">
-    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
-  </div>
-</div>
- 	<script src="{% static "main.js" %}"></script>
+				<div class="field">
+				  <label class="label">Password</label>
+				  <div class="control">
+				    {{form.password}}
+				  </div>
+				</div>
+
+				<div class="field is-grouped">
+				  <div class="control">
+				    <input type="submit" class="button is-link" value="Signin">
+				  </div>
+				  <div class="control">
+				    <a class="button is-link is-light" href="{% url 'signup-view' %}">Signup</a>
+				  </div>
+				</div>
+			</form>
+		</div>
+ 	<script src="{% static 'main.js' %}"></script>
+ 	<script src="{% static 'signin.js' %}"></script>
 </body>
 </html>

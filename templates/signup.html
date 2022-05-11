@@ -47,9 +47,11 @@
 		      </h1>
 		    </div>
 		 </div>
-		{% for message in messages %}
-			<p class="help is-{{ message.tag }}">{{message}}</p>
-		{% endfor %}
+		 {% if messages %}
+			{% for message in messages %}
+				<p class="help is-{{ message.tag }}">{{message}}</p>
+			{% endfor %}
+		{% endif %}
 		<div class="columns">
 			<div class="column is-half  is-offset-one-quarter" id="myform">
 				<form method="POST" autocomplete="off">
@@ -126,7 +128,7 @@
 					    <input type="submit" class="button is-link" value="Submit">
 					  </div>
 					  <div class="control">
-					    <a class="button is-link is-light" href="#">Signin</a>
+					    <a class="button is-link is-light" href="{% url 'signin-view' %}">Signin</a>
 					  </div>
 					</div>
 				</form>

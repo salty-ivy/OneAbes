@@ -54,7 +54,7 @@ class User(AbstractBaseUser,PermissionsMixin):
         verbose_name_plural = 'Users'
 
     def __str__(self):
-        return f'{self.email}-{self.uid}'
+        return f'{self.email}<---->{self.uid}'
 
 
 class Profile(models.Model):

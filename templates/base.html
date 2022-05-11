@@ -22,6 +22,11 @@
     {% include "_navbar.html" %}
     <section class="section">
     <div class="container">
+      {% if messages %}
+        {% for message in messages %}
+          {{message}}
+        {% endfor %}
+      {% endif %}
       {% block content %}
       {% endblock content %}
     </div>
