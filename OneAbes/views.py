@@ -3,6 +3,7 @@ from users.models import *
 from users.forms import *
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 def timeline(request):
     return render(request,'timeline.html',)
@@ -49,8 +50,15 @@ def signinView(request):
                 return redirect("timeline-view")
             else:
                 messages.warning(request,f'Incorrect credentials')
-                return redirect('signup-view')
+                return redirect('signin-view')
     context = {
         'form':form,
     }
     return render (request,'signin.html',context)
+
+def signoutView(request):
+    if request.method == "GET":
+        if request.user.is_authenticated:
+            logout(request)
+            return redirect('timeline-view')
+

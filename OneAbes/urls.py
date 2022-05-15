@@ -24,6 +24,7 @@ urlpatterns = [
     path('',timeline,name="timeline-view"),
     path('signup/',signupView,name="signup-view"),
     path('signin/',signinView,name="signin-view"),
+    path('signout/',signoutView,name="signout-view"),
     path('users/',include("users.urls", namespace="users")),
     path('clubs/',include("clubs.urls", namespace='clubs')),
     path('tasks/',include("tasks.urls", namespace='tasks')),

@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
-def profileView(request):
-    print("hello")
+
+from django.contrib.auth.decorators import login_required
+
+
+@login_required(login_url="signin-view")
+def profileView(request, uid):
+    return render(request,'users/profile.html')

@@ -1,27 +1,27 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="{% url "timeline-view" %}">
       OneAbes
     </a>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true">OneAbes</span>
+    <a role="button" class="navbar-burger" id="burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
+  <div id="nav_links" class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item">
-        Home
+        Tasks
       </a>
 
       <a class="navbar-item">
-        Documentation
+        Clubs
       </a>
 
-      <div class="navbar-item has-dropdown is-hoverable">
+      <div class="navbar-item has-dropdown" id="more-links">
         <a class="navbar-link">
           More
         </a>
@@ -47,14 +47,24 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary" href="{% url 'signup-view' %}">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
+          {% if user.is_authenticated %}
+            <a class="button is-light" href="{% url "users:profile-view" uid=request.user.uid%}">
+              <strong>{{user.email}}</strong>
+            </a>
+            <a class="button is-primary" href="{% url 'signout-view' %}">
+              <strong>Signout</strong>
+            </a>
+          {% else %}
+            <a class="button is-primary" href="{% url 'signup-view' %}">
+              Signup
+            </a>
+            <a class="button is-light" href="{% url 'signin-view' %}">
+              Signin
+            </a>
+          {% endif %}
         </div>
       </div>
     </div>
+    
   </div>
 </nav>

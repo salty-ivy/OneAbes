@@ -14,8 +14,8 @@
     <link rel="stylesheet"  href="/static/style.css" media="screen" />
     <script type="text/javascript" src="/static/main.js"></script>
 
-    {% block static %}
-    {% endblock static %}
+    {% block style %}
+    {% endblock style %}
 
 </head>
 <body>
@@ -30,7 +30,11 @@
       {% block content %}
       {% endblock content %}
     </div>
+
+    {% block script %}
+    {% endblock script %}
   </section>
     <script src="{% static "main.js" %}"></script>
+    <script src="{% static "navbar.js" %}"></script>
 </body>
 </html>

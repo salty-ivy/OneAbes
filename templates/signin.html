@@ -16,7 +16,11 @@
     <script type="text/javascript" src="/static/main.js"></script>
 </head>
 <body>
-	
+		 {% if messages %}
+			{% for message in messages %}
+				<p class="help is-{{ message.tag }}">{{message}}</p>
+			{% endfor %}
+		{% endif %}
 		<div class="column is-one-quarter-fullhd shadow">
 			<form method="POST" autocomplete="off">
 				{% csrf_token %}

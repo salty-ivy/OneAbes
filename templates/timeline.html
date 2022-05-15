@@ -1,4 +1,42 @@
 {% extends 'base.html' %}
+
+{% block style %}
+	<style type="text/css">
+		#test{
+			transition-duration:500ms;  
+		}
+		#test:hover{
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+			/*transform: scale(1.1);*/
+			/*margin: 100px;*/
+			margin-left: 100px;
+			margin-right: 100px;
+
+		}
+	</style>
+{% endblock style %}
 {% block content %}
-	<h1>Timeline page</h1>
+	<div class="section pt-0 pb-0">
+		<nav class="breadcrumb has-arrow-separator">
+			<ul>
+				<li><a href="" class="has-text-grey">OneAbes</a></li>
+				<li class="is-active"><a href="" class=" has-text-grey">timeline</a></li>
+			</ul>
+		</nav>
+	</div>
+	<section class="section">
+		<div class="container">
+			<div class="columns">
+				<div class="column" id="test">
+					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem odio impedit, facilis ipsum aliquam distinctio voluptatibus dolor a aut, ipsa aliquid consectetur modi fugiat illo voluptas eum, minus. Eum, rem.</p>
+				</div>
+				<div class="column" id="test">
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quis, enim at, corporis magni id. Eaque, ipsa repellat, dignissimos, autem est fuga repudiandae iusto minima exercitationem quidem adipisci magni cupiditate.</p>
+				</div>
+				<div class="column" id="test">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum optio odit, expedita dicta soluta adipisci ullam molestias esse asperiores aut dolorum et placeat consectetur eius eos repudiandae eveniet. Laborum, officia.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock content %}
