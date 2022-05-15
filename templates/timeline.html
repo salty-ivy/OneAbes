@@ -4,7 +4,7 @@
 	<style type="text/css">
 		#test{
 			transition-duration:500ms;
-			margin-top: 10px;
+			/*margin-top: 10px;*/
 			margin-left: 10px;
 			margin-right: 10px;
 
@@ -16,7 +16,7 @@
 			transition-duration: 500ms;
 		}
 		#button-style:hover{
-			box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+			box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 			/*width: 5px;*/
 		}
 	</style>
@@ -32,9 +32,9 @@
 	</div>
 	<section class="section">
 		<div class="container">
-			<div class="columns">
+			<div class="columns is-centered is-multiline">
 				{# each column div can be sized is is-{1..7} #}
-				<div class="column" id="test">
+				<div class="column mt-3 is-12-mobile" id="test">
 					<h1 class="title is-size-1">
 						Task-1
 					</h1>
@@ -46,7 +46,7 @@
 					<button class="button has-shadow is-danger" id="button-style">Dismiss</button>
 
 				</div>
-				<div class="column" id="test">
+				<div class="column mt-3 is-12-mobile" id="test">
 					<h1 class="title is-size-1">
 						Task-2
 					</h1>
@@ -57,7 +57,7 @@
 					<button class="button has-shadow is-info" id="button-style">View</button>
 					<button class="button has-shadow is-danger" id="button-style">Dismiss</button>
 				</div>
-				<div class="column" id="test">
+				<div class="column mt-3 is-12-mobile" id="test">
 					<h1 class="title is-size-1">
 						Task-3
 					</h1>
