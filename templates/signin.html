@@ -5,24 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'test.css' %}">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style type="text/css">
-    </style>
-    <link rel="stylesheet"  href="/static/style.css" media="screen" />
-    <link rel="stylesheet" href="{% static 'signin.css' %}">
-    <script type="text/javascript" src="/static/main.js"></script>
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
 </head>
 <body>
-		 {% if messages %}
-			{% for message in messages %}
-				<p class="help is-{{ message.tag }}">{{message}}</p>
-			{% endfor %}
-		{% endif %}
 		<section class="hero has-background-white-ter is-fullheight" id="login-shadow">
 			<div class="hero-body">
 				<div class="container">
@@ -31,6 +20,16 @@
 							<form method="POST" autocomplete="off" class="box">
 								<h3 class="title is-3">Signin</h3>
 								{% csrf_token %}
+								{% if messages %}
+									{% for message in messages %}
+										<span class="icon-text has-text-danger">
+										  <span class="icon">
+										    <i class="fas fa-ban"></i>
+										  </span>
+										  <span>{{message}}</span>
+										</span>
+									{% endfor %}
+								{% endif %}
 								<div class="field">
 								  <label class="label">Email</label>
 								  <div class="control has-icons-left">
@@ -64,7 +63,6 @@
 			</div>
 		</section>
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
- 	<script src="{% static 'main.js' %}"></script>
- 	<script src="{% static 'signin.js' %}"></script>
+ 	<script src="{% static 'js/signin.js' %}"></script>
 </body>
 </html>

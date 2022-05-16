@@ -5,16 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "test.css" %}">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet"  href="/static/style.css" media="screen" />
-    <script type="text/javascript" src="/static/main.js"></script>
 
     {% block style %}
     {% endblock style %}
@@ -24,11 +19,7 @@
     {% include "_navbar.html" %}
     <section class="section">
     <div class="container">
-      {% if messages %}
-        {% for message in messages %}
-          {{message}}
-        {% endfor %}
-      {% endif %}
+      
       {% block content %}
       {% endblock content %}
     </div>
@@ -37,7 +28,6 @@
     {% endblock script %}
   </section>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <script src="{% static "main.js" %}"></script>
-  <script src="{% static "navbar.js" %}"></script>
+  <script src="{% static 'js/navbar.js' %}"></script>
 </body>
 </html>

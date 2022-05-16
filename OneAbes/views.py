@@ -4,6 +4,7 @@ from users.forms import *
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.messages import get_messages
 
 @login_required(login_url="signup-view")
 def timeline(request):
@@ -26,7 +27,7 @@ def signupView(request):
                 profile.branch = form.cleaned_data.get('name')
                 profile.save()
                 messages.success(request,"Account created successfully")
-                return redirect('timeline-view')
+                return redirect('signin-view')
             else:
                 messages.danger(request,"Password didn't match")
                 return redirect('signup-view')
@@ -51,6 +52,10 @@ def signinView(request):
                 return redirect("timeline-view")
             else:
                 messages.warning(request,f'Incorrect credentials')
+                # storage = get_messages(request)
+                # for message in storage:
+                #     print(message.tags)
+                #     print(message.level)
                 return redirect('signin-view')
     context = {
         'form':form,

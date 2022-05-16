@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block style %}
 	<style type="text/css">
 		#test{
@@ -22,6 +22,17 @@
 	</style>
 {% endblock style %}
 {% block content %}
+	<div class="has-text-centered" id="message-span">
+	{% if messages %}
+	    {% for message in messages %}
+	      	<span class="tag is-success is-medium">
+  				{{message}}
+  				<button class="delete is-medium" id="delbutton"></button>
+			</span>
+	    {% endfor %}
+  	{% endif %}
+  	</div>
+
 	<div class="section pt-0 pb-0">
 		<nav class="breadcrumb has-arrow-separator">
 			<ul>
@@ -78,5 +89,5 @@
 				<h3 class="title mb-6">hello</h3>
 			</div>
 	</div>
-
+	<script src="{% static 'js/main.js' %}"></script>
 {% endblock content %}

@@ -89,6 +89,6 @@ class SigninForm(forms.Form):
 	email = forms.CharField(required=True)
 	password = forms.CharField(required=True,widget=forms.PasswordInput)
 
-	email.widget.attrs.update({'class':'input','placeholder':'name.admission@abes.ac.in'})
+	email.widget.attrs.update({'class':'input','id':'email','placeholder':'name.admission@abes.ac.in'})
 	password.widget.attrs.update({'class':'input','placeholder':'********'})
 

@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "test.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/test.css' %}">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet"  href="/static/style.css" media="screen" />
-    <script type="text/javascript" src="/static/main.js"></script>
 
     	<style type="text/css">
 		#check{
@@ -64,7 +61,14 @@
 								   	<i class="fa fa-envelope"></i>
 								</span>
 							  </div>
-							 {{form.email.errors}}
+							  {% if form.email.errors %}
+								 <span class="icon-text has-text-danger">
+								  <span class="icon">
+								    <i class="fas fa-ban"></i>
+								  </span>
+								  <span>{{form.email.errors}}</span>
+								</span>
+							{% endif %}
 							</div>
 
 							<div class="field">
@@ -76,7 +80,14 @@
 								</span>
 
 							  </div>
-							  {{form.name.errors}}
+							  {% if form.name.errors %}
+								 <span class="icon-text has-text-danger">
+								  <span class="icon">
+								    <i class="fas fa-ban"></i>
+								  </span>
+								  <span>{{form.name.errors}}</span>
+								</span>
+							{% endif %}
 							</div>
 
 							<div class="field">
@@ -87,7 +98,14 @@
 								   	<i class="fa fa-phone"></i>
 								</span>
 							  </div>
-							  {{form.phone.errors}}
+							  {% if form.phone.errors %}
+								 <span class="icon-text has-text-danger">
+								  <span class="icon">
+								    <i class="fas fa-ban"></i>
+								  </span>
+								  <span>{{form.phone.errors}}</span>
+								</span>
+							{% endif %}
 							</div>
 
 							<div class="field">
@@ -98,7 +116,14 @@
 								   	<i class="fa fa-user"></i>
 								</span>
 							  </div>
-							  {{form.addmision_number.errors}}
+							  {% if form.addmision_number.errors %}
+								 <span class="icon-text has-text-danger">
+								  <span class="icon">
+								    <i class="fas fa-ban"></i>
+								  </span>
+								  <span>{{form.addmision_number.errors}}</span>
+								</span>
+							{% endif %}
 							</div>
 
 							<div class="field">
@@ -133,7 +158,14 @@
 							  		<i class="fa fa-lock"></i>
 							  	</span>
 							  </div>
-							  {{form.password.errors}}
+							  {% if form.password.errors %}
+								 <span class="icon-text has-text-danger">
+								  <span class="icon">
+								    <i class="fas fa-ban"></i>
+								  </span>
+								  <span>{{form.password.errors}}</span>
+								</span>
+							{% endif %}
 							</div>
 
 
@@ -145,7 +177,14 @@
 							  		<i class="fa fa-lock"></i>
 							  	</span>
 							  </div>
-							  {{form.confirm_password.errors}}
+							  {% if form.confirm_password.errors %}
+								 <span class="icon-text has-text-danger">
+								  <span class="icon">
+								    <i class="fas fa-ban"></i>
+								  </span>
+								  <span>{{form.confirm_password.errors}}</span>
+								</span>
+							{% endif %}
 							</div>
 
 							<div class="field is-grouped">
@@ -163,6 +202,6 @@
 		</div>
 	</section>
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
- 	<script src="{% static "main.js" %}"></script>
+ 	<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
