@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="{% static "test.css" %}">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet"  href="/static/style.css" media="screen" />
@@ -39,102 +41,128 @@
 
 </head>
 <body>
-   	<div id="mydiv">
-		<div class="none" id="check">
-			<div class="container" id="check2">
-		      <h1 class="title is-size-1" id="signup">
-		        Signup
-		      </h1>
-		    </div>
-		 </div>
+   	<section class="hero has-background-white-ter is-fullheight">
 		 {% if messages %}
 			{% for message in messages %}
 				<p class="help is-{{ message.tag }}">{{message}}</p>
 			{% endfor %}
 		{% endif %}
-		<div class="columns">
-			<div class="column is-half  is-offset-one-quarter" id="myform">
-				<form method="POST" autocomplete="off">
-					{% csrf_token %}
-					<div class="field">
-					  <label class="label is-size-5" id="test">Email</label>
-					  <div class="control">
-					  	{{form.email}}
-					  </div>
-					 {{form.email.errors}}
-					</div>
+		<div class="hero-body">
+			<div class="container">
+				<div class="columns is-centered">
+					<div class=" column is-5-tablet is-7desktop is-6-widescreen">
+						<form method="POST" autocomplete="off" class="box">
+							<div class="has-text-centered mb-4">
+								<h3 class="title is-3">Singup</h3>
+							</div>
+							{% csrf_token %}
+							<div class="field">
+							  <label class="label is-size-5" id="test">Email</label>
+							  <div class="control has-icons-left">
+							  	{{form.email}}
+							  	<span class="icon is-small is-left">
+								   	<i class="fa fa-envelope"></i>
+								</span>
+							  </div>
+							 {{form.email.errors}}
+							</div>
 
-					<div class="field">
-					  <label class="label is-size-5">Name</label>
-					  <div class="control">
-					  	{{form.name}}
-					  </div>
-					  {{form.name.errors}}
-					</div>
+							<div class="field">
+							  <label class="label is-size-5">Name</label>
+							  <div class="control has-icons-left">
+							  	{{form.name}}
+							  	<span class="icon is-small is-left">
+								   	<i class="fa fa-user"></i>
+								</span>
 
-					<div class="field">
-					  <label class="label is-size-5">Phone</label>
-					  <div class="control">
-					  	{{form.phone}}
-					  </div>
-					  {{form.phone.errors}}
-					</div>
+							  </div>
+							  {{form.name.errors}}
+							</div>
 
-					<div class="field">
-					  <label class="label is-size-5">Addmission Number</label>
-					  <div class="control">
-					  	{{form.addmision_number}}
-					  </div>
-					  {{form.addmision_number.errors}}
-					</div>
+							<div class="field">
+							  <label class="label is-size-5">Phone</label>
+							  <div class="control has-icons-left">
+							  	{{form.phone}}
+							  	<span class="icon is-small is-left">
+								   	<i class="fa fa-phone"></i>
+								</span>
+							  </div>
+							  {{form.phone.errors}}
+							</div>
 
-					<div class="field">
-					  <label class="label is-size-5">Year</label>
-					  <div class="control">
-					    <div class="select">
-					      {{form.year}}
-					    </div>
-					  </div>
-					</div>
+							<div class="field">
+							  <label class="label is-size-5">Addmission Number</label>
+							  <div class="control has-icons-left">
+							  	{{form.addmision_number}}
+							  	<span class="icon is-small is-left">
+								   	<i class="fa fa-user"></i>
+								</span>
+							  </div>
+							  {{form.addmision_number.errors}}
+							</div>
 
-					<div class="field">
-					  <label class="label is-size-5">Branch</label>
-					  <div class="control">
-					    <div class="select">
-					      {{form.branch}}
-					    </div>
-					  </div>
-					</div>
+							<div class="field">
+							  <label class="label is-size-5">Year</label>
+							  <div class="control has-icons-left">
+							    <div class="select">
+							      {{form.year}}
+							    </div>
+							    <span class="icon is-small is-left">
+								   	<i class="fa fa-calendar"></i>
+								</span>
+							  </div>
+							</div>
 
-					<div class="field">
-					  <label class="label is-size-5">Password</label>
-					  <div class="control">
-					  	{{form.password}}
-					  </div>
-					  {{form.addmision_number.errors}}
-					</div>
+							<div class="field">
+							  <label class="label is-size-5">Branch</label>
+							  <div class="control has-icons-left">
+							    <div class="select">
+							      {{form.branch}}
+							    </div>
+							    <span class="icon is-small is-left">
+								   	<i class="fa fa-book"></i>
+								</span>
+							  </div>
+							</div>
+
+							<div class="field">
+							  <label class="label is-size-5">Password</label>
+							  <div class="control has-icons-left">
+							  	{{form.password}}
+							  	<span class="icon is-small is-left">
+							  		<i class="fa fa-lock"></i>
+							  	</span>
+							  </div>
+							  {{form.password.errors}}
+							</div>
 
 
-					<div class="field">
-					  <label class="label is-size-5">Confirm Password</label>
-					  <div class="control">
-					  	{{form.confirm_password}}
-					  </div>
-					  {{form.addmision_number.errors}}
-					</div>
+							<div class="field">
+							  <label class="label is-size-5">Confirm Password</label>
+							  <div class="control has-icons-left">
+							  	{{form.confirm_password}}
+							  	<span class="icon is-small is-left">
+							  		<i class="fa fa-lock"></i>
+							  	</span>
+							  </div>
+							  {{form.confirm_password.errors}}
+							</div>
 
-					<div class="field is-grouped">
-					  <div class="control">
-					    <input type="submit" class="button is-link" value="Submit">
-					  </div>
-					  <div class="control">
-					    <a class="button is-link is-light" href="{% url 'signin-view' %}">Signin</a>
-					  </div>
+							<div class="field is-grouped">
+							  <div class="control">
+							    <input type="submit" class="button is-link" value="Submit">
+							  </div>
+							  <div class="control">
+							    <a class="button is-link is-light" href="{% url 'signin-view' %}">Signin</a>
+							  </div>
+							</div>
+						</form>
 					</div>
-				</form>
+				</div>
 			</div>
 		</div>
-	</div>
+	</section>
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
  	<script src="{% static "main.js" %}"></script>
 </body>
 </html>
