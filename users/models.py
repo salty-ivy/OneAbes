@@ -64,8 +64,11 @@ class Profile(models.Model):
     phone = models.CharField(max_length=10)
     addminsion_number = models.CharField(max_length=100,null=True)
     branch = models.CharField(max_length=20)
+    bio = models.TextField(max_length=100,blank=True,null=True)
     club = models.ForeignKey(Club,on_delete=models.CASCADE,blank=True,null=True)
     profile_pics = models.ImageField(upload_to="profilepics",default="default.jpg")
+    background_pic = models.ImageField(upload_to="backgroundpics",default="default.jpg")
+
 
     def __str__(self):
         return f'{self.user.email}-{self.addminsion_number}'

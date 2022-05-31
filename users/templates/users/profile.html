@@ -1,5 +1,53 @@
 {% extends 'base.html' %}
-
+{% block style %}
+	<style media="screen">
+		#des{
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		}
+		#img-shadow{
+			box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+		}
+	</style>
+{% endblock style%}
+{% load static %}
 {% block content %}
-	<h1>Profile View</h1>
+	<div class="columns is-multiline is-centered">
+		<div class="column is-5-widescreen is-7-desktop is-8-tablet is-12-mobile">
+			<div class="card" id="des">
+			  <div class="card-image">
+			    <figure class="image is-4by3">
+			      <img src="{{profile.background_pic.url}}" alt="Placeholder image">
+			    </figure>
+			  </div>
+			  <div class="card-content">
+			    <div class="media">
+			      <div class="media-left">
+			        <figure class="image is-96x96">
+			          <img class="is-rounded" src="{{profile.profile_pics.url}}" alt="Placeholder image">
+			        </figure>
+			      </div>
+			      <div class="media-content">
+			        <h4><strong>{{profile.name}}</strong></h4>
+			        <p class="subtitle is-7"><a href="#">{{profile.user.email}}</a></p>
+			      </div>
+			    </div>
+
+			    <div class="content">
+						<nav class="breadcrumb" aria-label="breadcrumbs">
+						  <ul>
+						    <li><a href="#">{{profile.branch}}</a></li>
+						    <li><a href="#">{{profile.year}}</a></li>
+						    <li><a href="#">{{profile.addminsion_number}}</a></li>
+						  </ul>
+						</nav>
+			      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+			      <a href="#">#css</a> <a href="#">#responsive</a>
+			      <br>
+			      <time datetime="2016-1-1">{{profile.user.created_at}}</time>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
 {% endblock content %}
