@@ -5,7 +5,7 @@
 ## About The Project
 This project is regarding an one stop application for all clubs, student chapters and events happening around our college ABES ENGINEERING COLLEGE.
 Here all the clubs can review about their events and students will know before hand.
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -24,7 +24,6 @@ To get a local copy up and running follow these simple example steps.
 3. Make a branch regarding your issue.
 4. Change in your branch and pull request.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 ## Contributing
