@@ -5,64 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In | OneAbes</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/signin.css' %}">
 </head>
 <body>
-		<section class="hero has-background-white-ter is-fullheight" id="login-shadow">
-			<div class="hero-body">
-				<div class="container">
-					<div class="columns is-centered">
-						<div class="column is-5-tablet is-7-desktop is-6-widescreen">
-							<form method="POST" autocomplete="off" class="box">
-								<h3 class="title is-3">Signin</h3>
-								{% csrf_token %}
-								{% if messages %}
-									{% for message in messages %}
-										<span class="icon-text has-text-danger">
-										  <span class="icon">
-										    <i class="fas fa-ban"></i>
-										  </span>
-										  <span>{{message}}</span>
-										</span>
-									{% endfor %}
-								{% endif %}
-								<div class="field">
-								  <label class="label">Email</label>
-								  <div class="control has-icons-left">
-								    {{form.email}}
-								    <span class="icon is-small is-left">
-								    	<i class="fa fa-envelope"></i>
-								    </span>
-								  </div>
-								</div>
-								<div class="field">
-								  <label class="label">Password</label>
-								  <div class="control has-icons-left">
-								    {{form.password}}
-								    <span class="icon is-small is-left">
-								    	<i class="fa fa-lock"></i>
-								    </span>
-								  </div>
-								</div>
-								<div class="field is-grouped">
-								  <div class="control">
-								    <input type="submit" class="button is-link" value="Signin">
-								  </div>
-								  <div class="control">
-								    <a class="button is-link is-light" href="{% url 'signup-view' %}">Signup</a>
-								  </div>
-								</div>
-							</form>
-						</div>			
-					</div>
-				</div>
-			</div>
-		</section>
-	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
- 	<script src="{% static 'js/signin.js' %}"></script>
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-5-tablet is-7-desktop is-6-widescreen">
+                        <form method="POST" autocomplete="off" class="box">
+                            <h3 class="title is-3">Sign In</h3>
+                            {% csrf_token %}
+                            {% if messages %}
+                                <div class="notification is-danger">
+                                    <button class="delete"></button>
+                                    {% for message in messages %}
+                                        {{ message }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <div class="field">
+                                <label class="label" for="email">Email</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="email" id="email" name="email" placeholder="Enter your email" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label" for="password">Password</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="password" id="password" name="password" placeholder="Enter your password" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="remember_me"> Remember Me
+                                </label>
+                            </div>
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <button class="button is-link">Sign In</button>
+                                </div>
+                                <div class="control">
+                                    <a class="button is-link is-light" href="{% url 'signup-view' %}">Sign Up</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="{% static 'js/signin.js' %}"></script>
 </body>
 </html>
