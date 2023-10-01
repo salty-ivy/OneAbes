@@ -3,6 +3,7 @@
 <a name="readme-top"></a>
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+
 This project is regarding an one stop application for all clubs, student chapters and events happening around our college ABES ENGINEERING COLLEGE.
 Here all the clubs can review about their events and students will know before hand.
 
@@ -13,17 +14,17 @@ This is the way of how you may set up your project locally.
 
 To get a local copy up and running follow these simple example steps.
 
-
 ### Installation
 
 1. Fork this project.
 2. Clone the repo
+
    ```sh
    git clone https://github.com/github_username/repo_name.git
    ```
+
 3. Make a branch regarding your issue.
 4. Change in your branch and pull request.
-
 
 <!-- CONTRIBUTING -->
 ## Contributing

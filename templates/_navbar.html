@@ -21,6 +21,13 @@
         Clubs
       </a>
 
+      <a class="navbar-item">
+        Events
+      </a>
+  
+      <a class="navbar-item">
+        Blog
+      </a>
       <div class="navbar-item has-dropdown" id="more-links">
         <a class="navbar-link">
           More
@@ -60,6 +67,12 @@
             </a>
             <a class="button is-light" href="{% url 'signin-view' %}">
               Signin
+            </a>
+            <a class="button is-light" href="{% url 'faq-view' %}">
+              FAQ
+            </a>
+            <a class="button is-light" href="{% url 'support-view' %}">
+              Support
             </a>
           {% endif %}
         </div>
